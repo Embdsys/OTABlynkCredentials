@@ -15,7 +15,7 @@ credentials Credentials;
 //Variables
 char auth_token[33];
 bool connected_to_internet = 0;
-const int Erasing_button = 0;
+const int Erasing_button = 2;
 
 
 //Provide credentials for your ESP server
@@ -60,8 +60,10 @@ void setup()
 
   if (Credentials.credentials_get())
   {
-
-    Blynk.config(auth_token);
+    // If you're using a local Blynk server you have to point the device to the server and port (8080 by default)
+    Blynk.config(auth_token,IPAddress(192,168,0,77),8080);
+    // Else uncomment the line underneath
+    //   Blynk.config(auth_token)
     connected_to_internet = 1;
 
   }
