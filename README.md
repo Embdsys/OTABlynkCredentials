@@ -10,3 +10,17 @@ Above mentioned changes will differ according to different user. If you want to 
 then kindly watch this full tutorial video,
 
 https://youtu.be/cjGBlEVPGBI
+
+Remix by Embdsys Apr 10 2022
+*If youre using a local Blynk server you will need to point the device to the server and port (8080 by default)*
+*Look for this part in the "OTABlynkCredentials.ino"*
+
+  if (Credentials.credentials_get())
+  {
+    // If you're using a local Blynk server you have to point the device to the server and port (8080 by default)
+    Blynk.config(auth_token,IPAddress(192,168,0,77),8080);
+    // Else uncomment the line underneath
+    //   Blynk.config(auth_token)
+    connected_to_internet = 1;
+
+  }
