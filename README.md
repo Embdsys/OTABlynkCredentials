@@ -17,6 +17,7 @@ Remix by Embdsys Apr 10 2022
 
   if (Credentials.credentials_get())
   {
+  
     // If you're using a local Blynk server you have to point the device to the server and port (8080 by default)
     Blynk.config(auth_token,IPAddress(192,168,0,77),8080);
     // Else uncomment the line underneath
